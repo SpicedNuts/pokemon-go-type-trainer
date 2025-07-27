@@ -2,7 +2,7 @@
 
 Interactive flashcard app for mastering type effectiveness in Pokemon GO PvP battles.
 
-## 🎮 [Play the App](https://conradchou2004.github.io/pokemon-go-type-trainer)
+## 🎮 [Play the App](https://SpicedNuts.github.io/pokemon-go-type-trainer)
 
 ## ✨ Features
 
