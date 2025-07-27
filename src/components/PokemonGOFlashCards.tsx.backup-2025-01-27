@@ -151,7 +151,7 @@ const TypeBadge = ({ type, small = false, selected = false, onClick = null }: {
   selected?: boolean;
   onClick?: (() => void) | null;
 }) => {
-  const size = small ? 'px-3 py-2 text-sm' : 'px-4 py-3 text-base md:text-lg';
+  const size = small ? 'px-3 py-2 text-sm md:text-base' : 'px-4 py-3 text-base md:text-lg';
   const cursor = onClick ? 'cursor-pointer' : '';
   const border = selected ? 'ring-4 ring-yellow-300 ring-opacity-90 scale-105' : '';
   const shadow = selected ? 'shadow-2xl' : 'shadow-lg';
@@ -567,296 +567,150 @@ export default function PokemonGOFlashCards() {
     const accuracy = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-2 md:p-6">
-        <div className="max-w-6xl mx-auto h-screen flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-4 md:p-6">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Mobile Layout - Single Screen */}
-          <div className="md:hidden flex flex-col h-full">
-            {/* Compact Header */}
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl p-2 mb-2 border border-yellow-300">
-              <div className="flex justify-between items-center text-xs">
-                <div className="flex gap-3">
-                  <span className="font-black text-slate-900">{accuracy}%</span>
-                  <span className="font-black text-slate-900">Streak: {streak}</span>
-                  <span className="font-black text-slate-900">{score.correct}/{score.total}</span>
-                </div>
-                <button onClick={restartSession} className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">
-                  QUIT
-                </button>
-              </div>
-            </div>
-
-            {/* Progress */}
-            <div className="bg-slate-800 rounded-lg p-2 mb-2">
-              <div className="flex justify-between text-xs text-slate-200 mb-1">
-                <span>Battle {currentCard}/{sessionLength}</span>
-                {timerEnabled && !showAnswer && (
-                  <span className={`font-bold ${timeLeft <= 2 ? 'text-red-400' : 'text-blue-400'}`}>
-                    {timeLeft}s
-                  </span>
-                )}
-              </div>
-              <div className="w-full bg-slate-600 rounded-full h-2">
-                <div 
-                  className="bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 h-full rounded-full transition-all duration-500"
-                  style={{ width: `${(currentCard / sessionLength) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Battle Content - Flex Grow */}
-            <div className="flex-1 flex flex-col justify-center">
-              {!showAnswer ? (
+          {/* Stats Header */}
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl shadow-2xl p-4 md:p-6 mb-6 md:mb-8 border-4 border-yellow-300">
+            <div className="flex flex-wrap justify-between items-center gap-4">
+              <div className="flex flex-wrap gap-4 md:gap-8">
                 <div className="text-center">
-                  {/* Battle Header */}
-                  <h2 className="text-lg font-black mb-3 text-yellow-300">⚡ BATTLE! ⚡</h2>
-                  
-                  {/* Battle Layout - Horizontal */}
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    {/* Your Pokemon - Compact */}
-                    <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-xl p-2 border border-emerald-400 flex-1">
-                      <div className="text-xs font-bold text-white mb-1">YOUR</div>
-                      <div className="space-y-1">
-                        {yourTypes.map(type => (
-                          <div key={type} className="text-xs px-2 py-1 rounded font-bold text-white" style={{ backgroundColor: (typeColors as any)[type] }}>
-                            {type}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* VS */}
-                    <div className="text-2xl text-yellow-300">⚔️</div>
-                    
-                    {/* Opponent - Compact */}
-                    <div className="bg-gradient-to-br from-red-600 to-purple-600 rounded-xl p-2 border border-red-400 flex-1">
-                      <div className="text-xs font-bold text-white mb-1">OPPONENT</div>
-                      <div className="space-y-1">
-                        {oppTypes.map(type => (
-                          <div key={type} className="text-xs px-2 py-1 rounded font-bold text-white" style={{ backgroundColor: (typeColors as any)[type] }}>
-                            {type}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Answer Buttons - Compact */}
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => handleAnswer('winning')}
-                      className="w-full bg-green-600 text-white font-bold py-3 rounded-xl text-sm border border-green-400"
-                    >
-                      🟢 WINNING
-                    </button>
-                    <button
-                      onClick={() => handleAnswer('neutral')}
-                      className="w-full bg-yellow-600 text-white font-bold py-3 rounded-xl text-sm border border-yellow-400"
-                    >
-                      🟡 NEUTRAL
-                    </button>
-                    <button
-                      onClick={() => handleAnswer('losing')}
-                      className="w-full bg-red-600 text-white font-bold py-3 rounded-xl text-sm border border-red-400"
-                    >
-                      🔴 LOSING
-                    </button>
-                  </div>
+                  <div className="text-2xl md:text-4xl font-black text-slate-900">{accuracy}%</div>
+                  <div className="text-sm md:text-base font-bold text-slate-800">ACCURACY</div>
                 </div>
-              ) : (
                 <div className="text-center">
-                  <h2 className="text-lg font-black mb-2 text-white">
-                    {userAnswer === correctAnswer ? (
-                      <span className="text-green-400">🎉 CORRECT!</span>
-                    ) : (
-                      <span className="text-red-400">💥 WRONG!</span>
-                    )}
-                  </h2>
-                  
-                  <div className="text-sm mb-2 text-yellow-300">
-                    Answer: <span className={`font-bold ${
-                      correctAnswer === 'winning' ? 'text-green-400' : 
-                      correctAnswer === 'neutral' ? 'text-yellow-400' : 'text-red-400'
-                    }`}>
-                      {correctAnswer === 'winning' ? '🟢 WINNING' : 
-                       correctAnswer === 'neutral' ? '🟡 NEUTRAL' : '🔴 LOSING'}
-                    </span>
-                  </div>
-
-                  {/* Compact Analysis */}
-                  <div className="bg-slate-900 rounded-xl p-3 mb-3 text-left">
-                    <div className="text-xs text-yellow-300 font-bold mb-1">Quick Analysis:</div>
-                    <div className="text-xs text-slate-200 space-y-1">
-                      {yourTypes.map(yourType => {
-                        let multiplier = 1.0;
-                        for (const oppType of oppTypes) {
-                          const typeChartEntry = (typeChart as any)[yourType];
-                          if (typeChartEntry) multiplier *= typeChartEntry[oppType] || 1.0;
-                        }
-                        return (
-                          <div key={yourType}>
-                            {yourType} vs {oppTypes.join('/')}: {multiplier.toFixed(2)}x
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={nextCard}
-                    className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl text-sm border border-blue-400"
-                  >
-                    {currentCard >= sessionLength ? '🏆 FINISH!' : '⚡ NEXT!'}
-                  </button>
+                  <div className="text-2xl md:text-4xl font-black text-slate-900">{streak}</div>
+                  <div className="text-sm md:text-base font-bold text-slate-800">STREAK</div>
                 </div>
-              )}
+                <div className="text-center">
+                  <div className="text-2xl md:text-4xl font-black text-slate-900">{score.correct}/{score.total}</div>
+                  <div className="text-sm md:text-base font-bold text-slate-800">SCORE</div>
+                </div>
+              </div>
+              
+              <button
+                onClick={restartSession}
+                className="bg-red-600 hover:bg-red-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                🏃 QUIT
+              </button>
             </div>
           </div>
 
-          {/* Desktop Layout - Original */}
-          <div className="hidden md:block">
-            {/* Stats Header */}
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl shadow-2xl p-6 mb-8 border-4 border-yellow-300">
-              <div className="flex justify-between items-center">
-                <div className="flex gap-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-black text-slate-900">{accuracy}%</div>
-                    <div className="text-base font-bold text-slate-800">ACCURACY</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-black text-slate-900">{streak}</div>
-                    <div className="text-base font-bold text-slate-800">STREAK</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-black text-slate-900">{score.correct}/{score.total}</div>
-                    <div className="text-base font-bold text-slate-800">SCORE</div>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={restartSession}
-                  className="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  🏃 QUIT
-                </button>
-              </div>
-            </div>
-
-            {/* Progress Bar */}
-            <div className="bg-slate-800 rounded-2xl p-6 mb-8 shadow-xl border border-slate-600">
-              <div className="flex justify-between text-lg font-bold text-slate-200 mb-4">
-                <span>⚔️ Battle {currentCard} of {sessionLength}</span>
-                {timerEnabled && !showAnswer && (
-                  <span className={`font-black text-2xl ${timeLeft <= 2 ? 'text-red-400 animate-pulse' : 'text-blue-400'}`}>
-                    ⏱️ {timeLeft}s
-                  </span>
-                )}
-              </div>
-              <div className="w-full bg-slate-600 rounded-full h-6 border-2 border-slate-500">
-                <div 
-                  className="bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 h-full rounded-full transition-all duration-500"
-                  style={{ width: `${(currentCard / sessionLength) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Battle Interface */}
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl p-10 border border-slate-600">
-              {!showAnswer ? (
-                <div className="text-center">
-                  <h2 className="text-5xl font-black mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
-                    ⚡ TYPE MATCHUP BATTLE! ⚡
-                  </h2>
-                  
-                  <div className="flex flex-col items-center justify-center gap-16 mb-16">
-                    
-                    {/* Your Pokemon - Mobile Optimized */}
-                    <div className="w-full max-w-xs text-center bg-gradient-to-br from-emerald-600 to-blue-600 rounded-3xl p-10 border-4 border-emerald-400 shadow-xl">
-                      <div className="text-3xl font-black mb-6 text-white">🌟 YOUR POKÉMON</div>
-                      <div className="flex flex-col gap-4">
-                        {yourTypes.map(type => (
-                          <TypeBadge key={type} type={type} small={true} />
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* VS Symbol */}
-                    <div className="text-8xl font-black text-yellow-300 animate-pulse">⚔️</div>
-                    
-                    {/* Opponent - Mobile Optimized */}
-                    <div className="w-full max-w-xs text-center bg-gradient-to-br from-red-600 to-purple-600 rounded-3xl p-10 border-4 border-red-400 shadow-xl">
-                      <div className="text-3xl font-black mb-6 text-white">👾 OPPONENT</div>
-                      <div className="flex flex-col gap-4">
-                        {oppTypes.map(type => (
-                          <TypeBadge key={type} type={type} small={true} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Answer Buttons - Mobile First Design */}
-                  <div className="space-y-6 max-w-4xl mx-auto">
-                    <button
-                      onClick={() => handleAnswer('winning')}
-                      className="w-full bg-gradient-to-br from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-black py-10 px-6 rounded-3xl text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-green-300"
-                    >
-                      <div className="text-4xl mb-3">🟢</div>
-                      <div>WINNING</div>
-                    </button>
-                    <button
-                      onClick={() => handleAnswer('neutral')}
-                      className="w-full bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 text-white font-black py-10 px-6 rounded-3xl text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-300"
-                    >
-                      <div className="text-4xl mb-3">🟡</div>
-                      <div>NEUTRAL</div>
-                    </button>
-                    <button
-                      onClick={() => handleAnswer('losing')}
-                      className="w-full bg-gradient-to-br from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 text-white font-black py-10 px-6 rounded-3xl text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-red-300"
-                    >
-                      <div className="text-4xl mb-3">🔴</div>
-                      <div>LOSING</div>
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="text-center">
-                  <h2 className="text-5xl font-black mb-8 text-white">
-                    {userAnswer === correctAnswer ? (
-                      <span className="text-green-400">🎉 CORRECT! 🎉</span>
-                    ) : (
-                      <span className="text-red-400">💥 INCORRECT! 💥</span>
-                    )}
-                  </h2>
-                  
-                  <div className="text-2xl mb-8 text-yellow-300">
-                    <span>Correct answer: </span>
-                    <span className={`font-black text-3xl ${
-                      correctAnswer === 'winning' ? 'text-green-400' : 
-                      correctAnswer === 'neutral' ? 'text-yellow-400' : 'text-red-400'
-                    }`}>
-                      {correctAnswer === 'winning' ? '🟢 WINNING' : 
-                       correctAnswer === 'neutral' ? '🟡 NEUTRAL' : '🔴 LOSING'}
-                    </span>
-                  </div>
-
-                  {/* Battle Analysis */}
-                  <div className="bg-slate-900 bg-opacity-80 rounded-3xl p-8 mb-10 text-left border-2 border-slate-600 shadow-xl">
-                    <h4 className="font-black mb-6 text-yellow-300 text-2xl">📊 BATTLE ANALYSIS:</h4>
-                    <pre className="whitespace-pre-wrap text-base text-slate-200 font-mono leading-relaxed overflow-x-auto">
-                      {getDetailedExplanation()}
-                    </pre>
-                  </div>
-
-                  <button
-                    onClick={nextCard}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 text-white font-black py-6 px-8 rounded-3xl text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-4 border-blue-300"
-                  >
-                    {currentCard >= sessionLength ? '🏆 FINISH SESSION!' : '⚡ NEXT BATTLE!'}
-                  </button>
-                </div>
+          {/* Progress Bar */}
+          <div className="bg-slate-800 rounded-2xl p-4 md:p-6 mb-6 md:mb-8 shadow-xl border border-slate-600">
+            <div className="flex justify-between text-base md:text-lg font-bold text-slate-200 mb-4">
+              <span>⚔️ Battle {currentCard} of {sessionLength}</span>
+              {timerEnabled && !showAnswer && (
+                <span className={`font-black text-xl md:text-2xl ${timeLeft <= 2 ? 'text-red-400 animate-pulse' : 'text-blue-400'}`}>
+                  ⏱️ {timeLeft}s
+                </span>
               )}
             </div>
+            <div className="w-full bg-slate-600 rounded-full h-4 md:h-6 border-2 border-slate-500">
+              <div 
+                className="bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 h-full rounded-full transition-all duration-500"
+                style={{ width: `${(currentCard / sessionLength) * 100}%` }}
+              ></div>
+            </div>
+          </div>
+
+          {/* Battle Interface */}
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl p-6 md:p-10 border border-slate-600">
+            {!showAnswer ? (
+              <div className="text-center">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                  ⚡ TYPE MATCHUP BATTLE! ⚡
+                </h2>
+                
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16">
+                  
+                  {/* Your Pokemon */}
+                  <div className="text-center bg-gradient-to-br from-emerald-600 to-blue-600 rounded-3xl p-6 md:p-8 lg:p-10 border-4 border-emerald-400 shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-black mb-4 md:mb-6 text-white">🌟 YOUR POKÉMON</div>
+                    <div className="flex flex-col gap-3 md:gap-4">
+                      {yourTypes.map(type => (
+                        <TypeBadge key={type} type={type} />
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* VS Symbol */}
+                  <div className="text-4xl md:text-6xl lg:text-8xl font-black text-yellow-300 animate-pulse">⚔️</div>
+                  
+                  {/* Opponent */}
+                  <div className="text-center bg-gradient-to-br from-red-600 to-purple-600 rounded-3xl p-6 md:p-8 lg:p-10 border-4 border-red-400 shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-black mb-4 md:mb-6 text-white">👾 OPPONENT</div>
+                    <div className="flex flex-col gap-3 md:gap-4">
+                      {oppTypes.map(type => (
+                        <TypeBadge key={type} type={type} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Answer Buttons */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+                  <button
+                    onClick={() => handleAnswer('winning')}
+                    className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-black py-6 md:py-8 lg:py-10 px-4 md:px-6 rounded-3xl text-lg md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-green-300"
+                  >
+                    <div className="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3">🟢</div>
+                    <div>WINNING</div>
+                  </button>
+                  <button
+                    onClick={() => handleAnswer('neutral')}
+                    className="bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 text-white font-black py-6 md:py-8 lg:py-10 px-4 md:px-6 rounded-3xl text-lg md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-300"
+                  >
+                    <div className="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3">🟡</div>
+                    <div>NEUTRAL</div>
+                  </button>
+                  <button
+                    onClick={() => handleAnswer('losing')}
+                    className="bg-gradient-to-br from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 text-white font-black py-6 md:py-8 lg:py-10 px-4 md:px-6 rounded-3xl text-lg md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-red-300"
+                  >
+                    <div className="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3">🔴</div>
+                    <div>LOSING</div>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 md:mb-8 text-white">
+                  {userAnswer === correctAnswer ? (
+                    <span className="text-green-400">🎉 CORRECT! 🎉</span>
+                  ) : (
+                    <span className="text-red-400">💥 INCORRECT! 💥</span>
+                  )}
+                </h2>
+                
+                <div className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-yellow-300">
+                  <span>Correct answer: </span>
+                  <span className={`font-black text-xl md:text-2xl lg:text-3xl ${
+                    correctAnswer === 'winning' ? 'text-green-400' : 
+                    correctAnswer === 'neutral' ? 'text-yellow-400' : 'text-red-400'
+                  }`}>
+                    {correctAnswer === 'winning' ? '🟢 WINNING' : 
+                     correctAnswer === 'neutral' ? '🟡 NEUTRAL' : '🔴 LOSING'}
+                  </span>
+                </div>
+
+                {/* Battle Analysis */}
+                <div className="bg-slate-900 bg-opacity-80 rounded-3xl p-6 md:p-8 mb-8 md:mb-10 text-left border-2 border-slate-600 shadow-xl">
+                  <h4 className="font-black mb-4 md:mb-6 text-yellow-300 text-xl md:text-2xl">📊 BATTLE ANALYSIS:</h4>
+                  <pre className="whitespace-pre-wrap text-sm md:text-base text-slate-200 font-mono leading-relaxed overflow-x-auto">
+                    {getDetailedExplanation()}
+                  </pre>
+                </div>
+
+                <button
+                  onClick={nextCard}
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 text-white font-black py-4 md:py-6 px-6 md:px-8 rounded-3xl text-xl md:text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-4 border-blue-300"
+                >
+                  {currentCard >= sessionLength ? '🏆 FINISH SESSION!' : '⚡ NEXT BATTLE!'}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
