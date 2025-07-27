@@ -203,22 +203,7 @@ export default function PokemonGOFlashCards() {
 
   const getMetaPokemon = (typeCombo: string, currentLeague: 'great' | 'ultra' | 'master') => {
     const pokemonData = leaguePokemon[currentLeague];
-    
-    // First try exact match
-    if (pokemonData[typeCombo]) {
-      return pokemonData[typeCombo];
-    }
-    
-    // If dual type, try reversed order (e.g., "Fire/Dragon" -> "Dragon/Fire")
-    if (typeCombo.includes('/')) {
-      const types = typeCombo.split('/');
-      const reversedCombo = `${types[1]}/${types[0]}`;
-      if (pokemonData[reversedCombo]) {
-        return pokemonData[reversedCombo];
-      }
-    }
-    
-    return [];
+    return pokemonData[typeCombo] || [];
   };
 
   const generateOpponent = useCallback(() => {
@@ -366,7 +351,10 @@ export default function PokemonGOFlashCards() {
     const relevantPokemon = getMetaPokemon(opponentType, league);
     if (relevantPokemon && relevantPokemon.length > 0) {
       explanation += `\n--- META ${opponentType.toUpperCase()} POKEMON ---\n`;
-      explanation += relevantPokemon.join(', ');
+      explanation += relevantPokemon.slice(0, 15).join(', ');
+      if (relevantPokemon.length > 15) {
+        explanation += ` + ${relevantPokemon.length - 15} more...`;
+      }
     }
 
     const weights = leagueWeights[league];
@@ -379,14 +367,10 @@ export default function PokemonGOFlashCards() {
     return explanation;
   };
 
-  // FIX 1: Timer auto-timeout functionality
   useEffect(() => {
     if (gameState === 'playing' && timerEnabled && !showAnswer && timeLeft > 0) {
       const timer = setTimeout(() => setTimeLeft(prev => prev - 1), 1000);
       return () => clearTimeout(timer);
-    } else if (gameState === 'playing' && timerEnabled && !showAnswer && timeLeft === 0) {
-      // Auto-submit as incorrect when timer reaches 0
-      handleAnswer('timeout');
     }
   }, [gameState, timerEnabled, showAnswer, timeLeft]);
 
@@ -395,46 +379,46 @@ export default function PokemonGOFlashCards() {
     const yourMetaPokemon = yourTypeCombo ? getMetaPokemon(yourTypeCombo, league) : [];
 
     return (
-      <div className="h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-1 md:p-1 overflow-y-auto">
-        <div className="max-w-3xl mx-auto h-full flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-2 md:p-6">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-1 md:mb-2">
-            <div className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 rounded-lg md:rounded-xl px-2 py-1 md:px-4 md:py-1 inline-block mb-1 shadow-lg">
-              <h1 className="text-base md:text-2xl font-black text-slate-900 tracking-wide">
+          <div className="text-center mb-4 md:mb-12">
+            <div className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 rounded-2xl md:rounded-3xl px-4 py-3 md:px-12 md:py-6 inline-block mb-3 md:mb-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <h1 className="text-xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-wide">
                 ⚔️ PVP TYPE TRAINER ⚔️
               </h1>
             </div>
-            <div className="text-yellow-300 font-bold text-xs md:text-sm max-w-3xl mx-auto">
+            <div className="text-yellow-300 font-bold text-sm md:text-xl lg:text-2xl max-w-3xl mx-auto">
               Master type effectiveness for competitive Pokémon GO battles!
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg md:rounded-xl shadow-lg p-2 md:p-3 border border-slate-600 flex-1 overflow-y-auto">
-            <div className="space-y-1 md:space-y-2">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl shadow-2xl p-3 md:p-10 border border-slate-600">
+            <div className="space-y-4 md:space-y-12">
               
               {/* League Selection */}
               <div>
-                <h3 className="text-sm md:text-lg font-bold mb-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                <h3 className="text-lg md:text-3xl font-bold mb-3 md:mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
                   🏆 Choose Your League 🏆
                 </h3>
-                <div className="grid grid-cols-3 md:grid-cols-3 gap-1 md:gap-2">
+                <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-6">
                   {[
-                    { value: 'great' as const, label: 'Great League', color: 'from-blue-500 to-blue-700', icon: '🌟', desc: 'CP 1500' },
-                    { value: 'ultra' as const, label: 'Ultra League', color: 'from-yellow-500 to-yellow-700', icon: '⚡', desc: 'CP 2500' },
-                    { value: 'master' as const, label: 'Master League', color: 'from-purple-500 to-purple-700', icon: '👑', desc: 'No Limit' }
+                    { value: 'great' as const, label: 'Great League', color: 'from-emerald-500 to-teal-600', icon: '🌟', desc: 'CP 1500' },
+                    { value: 'ultra' as const, label: 'Ultra League', color: 'from-purple-500 to-indigo-600', icon: '⚡', desc: 'CP 2500' },
+                    { value: 'master' as const, label: 'Master League', color: 'from-amber-500 to-orange-600', icon: '👑', desc: 'No Limit' }
                   ].map(({ value, label, color, icon, desc }) => (
                     <button
                       key={value}
                       onClick={() => setLeague(value)}
-                      className={`relative p-1 md:p-2 rounded-lg md:rounded-xl font-bold text-white text-sm md:text-base transition-all duration-300 transform hover:scale-105 shadow-md border-2 ${
+                      className={`relative p-3 md:p-8 rounded-2xl md:rounded-3xl font-bold text-white text-sm md:text-xl transition-all duration-300 transform hover:scale-105 shadow-xl border-2 ${
                         league === value 
                           ? `bg-gradient-to-br ${color} scale-105 ring-4 ring-yellow-400 ring-opacity-70 shadow-2xl border-yellow-400` 
                           : 'bg-gradient-to-br from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 border-slate-500'
                       }`}
                     >
-                      <div className="text-sm md:text-lg mb-1">{icon}</div>
-                      <div className="font-black text-sm md:text-lg">{label}</div>
-                      <div className="text-xs md:text-sm opacity-90">{desc}</div>
+                      <div className="text-lg md:text-4xl mb-1 md:mb-2">{icon}</div>
+                      <div className="font-black">{label}</div>
+                      <div className="text-xs md:text-base opacity-90 mt-1">{desc}</div>
                     </button>
                   ))}
                 </div>
@@ -442,10 +426,10 @@ export default function PokemonGOFlashCards() {
 
               {/* Type Selection */}
               <div>
-                <h3 className="text-sm md:text-lg font-bold mb-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
+                <h3 className="text-lg md:text-3xl font-bold mb-3 md:mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
                   🔥 Select Your Pokémon Types ({selectedTypes.length}/2) 🔥
                 </h3>
-                <div className="grid grid-cols-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-1 md:gap-2">
+                <div className="grid grid-cols-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-2 md:gap-4">
                   {allTypes.map(type => (
                     <TypeBadge
                       key={type}
@@ -456,20 +440,20 @@ export default function PokemonGOFlashCards() {
                     />
                   ))}
                 </div>
-                <div className="text-center mt-1 md:mt-2 text-slate-300 text-xs md:text-sm font-medium">
+                <div className="text-center mt-2 md:mt-4 text-slate-300 text-xs md:text-lg font-medium">
                   Click up to 2 types • Single-type Pokémon use 1 type • Dual-type use 2 types
                 </div>
               </div>
 
               {/* Training Mode */}
               <div>
-                <h3 className="text-base md:text-xl font-bold mb-1 md:mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+                <h3 className="text-lg md:text-3xl font-bold mb-3 md:mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                   ⚡ Training Mode ⚡
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
                   <button
                     onClick={() => setPracticeMode('meta')}
-                    className={`p-2 md:p-3 rounded-xl md:rounded-2xl font-bold text-xs md:text-base transition-all duration-300 transform hover:scale-105 border-2 ${
+                    className={`p-3 md:p-8 rounded-2xl md:rounded-3xl font-bold text-sm md:text-xl transition-all duration-300 transform hover:scale-105 border-2 ${
                       practiceMode === 'meta' 
                         ? 'bg-gradient-to-br from-orange-500 to-red-600 text-white scale-105 shadow-2xl border-orange-400 ring-4 ring-orange-300 ring-opacity-50' 
                         : 'bg-gradient-to-br from-slate-600 to-slate-700 text-slate-200 hover:from-slate-500 hover:to-slate-600 border-slate-500'
@@ -555,7 +539,8 @@ export default function PokemonGOFlashCards() {
                     <div>
                       <div className="text-emerald-200 font-bold mb-2 md:mb-3 text-sm md:text-xl">Meta Pokémon with this typing:</div>
                       <div className="text-emerald-100 text-xs md:text-lg font-medium">
-                        {yourMetaPokemon.join(', ')}
+                        {yourMetaPokemon.slice(0, 8).join(', ')}
+                        {yourMetaPokemon.length > 8 && ` + ${yourMetaPokemon.length - 8} more...`}
                       </div>
                     </div>
                   )}
@@ -583,47 +568,47 @@ export default function PokemonGOFlashCards() {
     const accuracy = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-2 md:p-4">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-2 md:p-6">
+        <div className="max-w-6xl mx-auto">
           
-          {/* FIX 2: More compact stats header for desktop */}
-          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl md:rounded-2xl shadow-2xl p-2 md:p-4 mb-2 md:mb-4 border-2 md:border-4 border-yellow-300">
+          {/* Stats Header - Mobile Compact */}
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl md:rounded-3xl shadow-2xl p-2 md:p-6 mb-2 md:mb-8 border-4 border-yellow-300">
             <div className="flex justify-between items-center">
-              <div className="flex gap-3 md:gap-6">
+              <div className="flex gap-3 md:gap-8">
                 <div className="text-center">
-                  <div className="text-lg md:text-3xl font-black text-slate-900">{accuracy}%</div>
-                  <div className="text-xs md:text-sm font-bold text-slate-800">ACCURACY</div>
+                  <div className="text-lg md:text-4xl font-black text-slate-900">{accuracy}%</div>
+                  <div className="text-xs md:text-base font-bold text-slate-800">ACCURACY</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg md:text-3xl font-black text-slate-900">{streak}</div>
-                  <div className="text-xs md:text-sm font-bold text-slate-800">STREAK</div>
+                  <div className="text-lg md:text-4xl font-black text-slate-900">{streak}</div>
+                  <div className="text-xs md:text-base font-bold text-slate-800">STREAK</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg md:text-3xl font-black text-slate-900">{score.correct}/{score.total}</div>
-                  <div className="text-xs md:text-sm font-bold text-slate-800">SCORE</div>
+                  <div className="text-lg md:text-4xl font-black text-slate-900">{score.correct}/{score.total}</div>
+                  <div className="text-xs md:text-base font-bold text-slate-800">SCORE</div>
                 </div>
               </div>
               
               <button
                 onClick={restartSession}
-                className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 md:px-4 md:py-3 rounded-lg md:rounded-xl font-bold text-sm md:text-base transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 md:px-6 md:py-4 rounded-xl md:rounded-2xl font-bold text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 🏃 QUIT
               </button>
             </div>
           </div>
 
-          {/* Compact Progress Bar */}
-          <div className="bg-slate-800 rounded-lg md:rounded-xl p-2 md:p-4 mb-2 md:mb-4 shadow-xl border border-slate-600">
-            <div className="flex justify-between text-sm md:text-base font-bold text-slate-200 mb-2">
+          {/* Progress Bar - Mobile Compact */}
+          <div className="bg-slate-800 rounded-xl md:rounded-2xl p-2 md:p-6 mb-2 md:mb-8 shadow-xl border border-slate-600">
+            <div className="flex justify-between text-sm md:text-lg font-bold text-slate-200 mb-2 md:mb-4">
               <span>⚔️ Battle {currentCard} of {sessionLength}</span>
               {timerEnabled && !showAnswer && (
-                <span className={`font-black text-base md:text-xl ${timeLeft <= 2 ? 'text-red-400 animate-pulse' : 'text-blue-400'}`}>
+                <span className={`font-black text-lg md:text-2xl ${timeLeft <= 2 ? 'text-red-400 animate-pulse' : 'text-blue-400'}`}>
                   ⏱️ {timeLeft}s
                 </span>
               )}
             </div>
-            <div className="w-full bg-slate-600 rounded-full h-2 md:h-4 border-2 border-slate-500">
+            <div className="w-full bg-slate-600 rounded-full h-3 md:h-6 border-2 border-slate-500">
               <div 
                 className="bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 h-full rounded-full transition-all duration-500"
                 style={{ width: `${(currentCard / sessionLength) * 100}%` }}
@@ -631,34 +616,34 @@ export default function PokemonGOFlashCards() {
             </div>
           </div>
 
-          {/* FIX 2: More compact battle interface for desktop */}
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl md:rounded-2xl shadow-2xl p-3 md:p-6 border border-slate-600">
+          {/* Battle Interface - Mobile Optimized */}
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl shadow-2xl p-3 md:p-10 border border-slate-600">
             {!showAnswer ? (
               <div className="text-center">
-                <h2 className="text-lg md:text-3xl font-black mb-3 md:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                <h2 className="text-lg md:text-4xl lg:text-5xl font-black mb-3 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
                   ⚡ TYPE MATCHUP BATTLE! ⚡
                 </h2>
                 
-                {/* More compact Pokemon vs layout for desktop */}
-                <div className="flex flex-row items-center justify-center gap-2 md:gap-8 mb-4 md:mb-8">
+                {/* Mobile: Left vs Right Pokemon Layout, Desktop: Side-by-side */}
+                <div className="flex flex-row md:flex-row lg:flex-row items-start justify-center gap-2 md:gap-12 lg:gap-16 mb-4 md:mb-16">
                   
-                  {/* Your Pokemon - More compact */}
-                  <div className="text-center bg-gradient-to-br from-emerald-600 to-blue-600 rounded-xl md:rounded-2xl p-3 md:p-5 border-2 border-emerald-400 shadow-xl transform hover:scale-105 transition-all duration-300 flex-1 md:w-auto">
-                    <div className="text-xs md:text-lg font-black mb-2 md:mb-3 text-white">🌟 YOUR POKÉMON</div>
-                    <div className="flex flex-col gap-1 md:gap-2 items-center">
+                  {/* Your Pokemon - Left side on mobile */}
+                  <div className="text-center bg-gradient-to-br from-emerald-600 to-blue-600 rounded-xl md:rounded-3xl p-3 md:p-8 lg:p-10 border-2 md:border-4 border-emerald-400 shadow-xl transform hover:scale-105 transition-all duration-300 flex-1 md:w-auto">
+                    <div className="text-xs md:text-2xl lg:text-3xl font-black mb-2 md:mb-6 text-white">🌟 YOUR POKÉMON</div>
+                    <div className="flex flex-col md:flex-col gap-1 md:gap-4 items-center">
                       {yourTypes.map(type => (
                         <TypeBadge key={type} type={type} small={false} />
                       ))}
                     </div>
                   </div>
                   
-                  {/* VS Symbol - smaller */}
-                  <div className="text-xl md:text-4xl font-black text-yellow-300 animate-pulse self-center">⚔️</div>
+                  {/* VS Symbol */}
+                  <div className="text-xl md:text-6xl lg:text-8xl font-black text-yellow-300 animate-pulse self-center">⚔️</div>
                   
-                  {/* Opponent - More compact */}
-                  <div className="text-center bg-gradient-to-br from-red-600 to-purple-600 rounded-xl md:rounded-2xl p-3 md:p-5 border-2 border-red-400 shadow-xl transform hover:scale-105 transition-all duration-300 flex-1 md:w-auto">
-                    <div className="text-xs md:text-lg font-black mb-2 md:mb-3 text-white">👾 OPPONENT</div>
-                    <div className="flex flex-col gap-1 md:gap-2 items-center">
+                  {/* Opponent - Right side on mobile */}
+                  <div className="text-center bg-gradient-to-br from-red-600 to-purple-600 rounded-xl md:rounded-3xl p-3 md:p-8 lg:p-10 border-2 md:border-4 border-red-400 shadow-xl transform hover:scale-105 transition-all duration-300 flex-1 md:w-auto">
+                    <div className="text-xs md:text-2xl lg:text-3xl font-black mb-2 md:mb-6 text-white">👾 OPPONENT</div>
+                    <div className="flex flex-col md:flex-col gap-1 md:gap-4 items-center">
                       {oppTypes.map(type => (
                         <TypeBadge key={type} type={type} small={false} />
                       ))}
@@ -666,34 +651,34 @@ export default function PokemonGOFlashCards() {
                   </div>
                 </div>
 
-                {/* More compact answer buttons */}
-                <div className="grid grid-cols-3 gap-2 md:gap-4 max-w-3xl mx-auto">
+                {/* Answer Buttons - Mobile Horizontal, Desktop Grid */}
+                <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-6 max-w-4xl mx-auto">
                   <button
                     onClick={() => handleAnswer('winning')}
-                    className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-black py-3 md:py-5 px-2 md:px-4 rounded-xl md:rounded-2xl text-sm md:text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 md:border-4 border-green-300"
+                    className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-400 hover:to-green-600 text-white font-black py-4 md:py-8 lg:py-10 px-2 md:px-6 rounded-2xl md:rounded-3xl text-sm md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-green-300"
                   >
-                    <div className="text-lg md:text-2xl mb-1">🟢</div>
+                    <div className="text-lg md:text-3xl lg:text-4xl mb-1 md:mb-3">🟢</div>
                     <div>WINNING</div>
                   </button>
                   <button
                     onClick={() => handleAnswer('neutral')}
-                    className="bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 text-white font-black py-3 md:py-5 px-2 md:px-4 rounded-xl md:rounded-2xl text-sm md:text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 md:border-4 border-yellow-300"
+                    className="bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 text-white font-black py-4 md:py-8 lg:py-10 px-2 md:px-6 rounded-2xl md:rounded-3xl text-sm md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-300"
                   >
-                    <div className="text-lg md:text-2xl mb-1">🟡</div>
+                    <div className="text-lg md:text-3xl lg:text-4xl mb-1 md:mb-3">🟡</div>
                     <div>NEUTRAL</div>
                   </button>
                   <button
                     onClick={() => handleAnswer('losing')}
-                    className="bg-gradient-to-br from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 text-white font-black py-3 md:py-5 px-2 md:px-4 rounded-xl md:rounded-2xl text-sm md:text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 md:border-4 border-red-300"
+                    className="bg-gradient-to-br from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 text-white font-black py-4 md:py-8 lg:py-10 px-2 md:px-6 rounded-2xl md:rounded-3xl text-sm md:text-xl lg:text-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-red-300"
                   >
-                    <div className="text-lg md:text-2xl mb-1">🔴</div>
+                    <div className="text-lg md:text-3xl lg:text-4xl mb-1 md:mb-3">🔴</div>
                     <div>LOSING</div>
                   </button>
                 </div>
               </div>
             ) : (
               <div className="text-center">
-                <h2 className="text-lg md:text-3xl font-black mb-3 md:mb-4 text-white">
+                <h2 className="text-lg md:text-4xl lg:text-5xl font-black mb-3 md:mb-8 text-white">
                   {userAnswer === correctAnswer ? (
                     <span className="text-green-400">🎉 CORRECT! 🎉</span>
                   ) : userAnswer === 'timeout' ? (
@@ -703,9 +688,9 @@ export default function PokemonGOFlashCards() {
                   )}
                 </h2>
                 
-                <div className="text-sm md:text-lg mb-3 md:mb-4 text-yellow-300">
+                <div className="text-sm md:text-xl lg:text-2xl mb-3 md:mb-8 text-yellow-300">
                   <span>Correct answer: </span>
-                  <span className={`font-black text-base md:text-xl ${
+                  <span className={`font-black text-base md:text-2xl lg:text-3xl ${
                     correctAnswer === 'winning' ? 'text-green-400' : 
                     correctAnswer === 'neutral' ? 'text-yellow-400' : 'text-red-400'
                   }`}>
@@ -714,17 +699,17 @@ export default function PokemonGOFlashCards() {
                   </span>
                 </div>
 
-                {/* More compact battle analysis */}
-                <div className="bg-slate-900 bg-opacity-80 rounded-xl md:rounded-2xl p-3 md:p-4 mb-4 md:mb-6 text-left border-2 border-slate-600 shadow-xl">
-                  <h4 className="font-black mb-2 md:mb-3 text-yellow-300 text-sm md:text-lg">📊 BATTLE ANALYSIS:</h4>
-                  <pre className="whitespace-pre-wrap text-xs md:text-sm text-slate-200 font-mono leading-relaxed overflow-x-auto max-h-24 md:max-h-40 overflow-y-auto">
+                {/* Battle Analysis - Mobile Collapsible */}
+                <div className="bg-slate-900 bg-opacity-80 rounded-2xl md:rounded-3xl p-3 md:p-8 mb-4 md:mb-10 text-left border-2 border-slate-600 shadow-xl">
+                  <h4 className="font-black mb-3 md:mb-6 text-yellow-300 text-sm md:text-2xl">📊 BATTLE ANALYSIS:</h4>
+                  <pre className="whitespace-pre-wrap text-xs md:text-base text-slate-200 font-mono leading-relaxed overflow-x-auto max-h-32 md:max-h-none overflow-y-auto md:overflow-y-visible">
                     {getDetailedExplanation()}
                   </pre>
                 </div>
 
                 <button
                   onClick={nextCard}
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 text-white font-black py-3 md:py-4 px-4 md:px-6 rounded-xl md:rounded-2xl text-base md:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 md:border-4 border-blue-300"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 text-white font-black py-3 md:py-6 px-4 md:px-8 rounded-2xl md:rounded-3xl text-lg md:text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl border-4 border-blue-300"
                 >
                   {currentCard >= sessionLength ? '🏆 FINISH SESSION!' : '⚡ NEXT BATTLE!'}
                 </button>
