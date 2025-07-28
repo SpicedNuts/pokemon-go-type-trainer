@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/pokemon-go-type-trainer/',
+  base: '/pokemon-go-type-trainer/'
 })
