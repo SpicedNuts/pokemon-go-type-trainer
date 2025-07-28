@@ -1,0 +1,21 @@
+{
+  "name": "PVP Type Trainer - Pokemon GO",
+  "short_name": "PVP Trainer",
+  "description": "Master type effectiveness for competitive Pokemon GO battles",
+  "start_url": "/pokemon-go-type-trainer/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "/pokemon-go-type-trainer/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pokemon-go-type-trainer/favicon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
