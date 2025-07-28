@@ -38,8 +38,6 @@
     "Dragonite"
   ],
   "Dragon/Ghost": [
-    "Giratina (Origin)",
-    "Giratina (Altered)",
     "Dragapult"
   ],
   "Dragon/Ground": [
@@ -55,16 +53,6 @@
   "Dragon/Psychic": [
     "Latios (Shadow)",
     "Latios"
-  ],
-  "Dragon/Steel": [
-    "Dialga (Origin)",
-    "Dialga (Shadow)",
-    "Dialga"
-  ],
-  "Dragon/Water": [
-    "Palkia (Origin)",
-    "Palkia (Shadow)",
-    "Palkia"
   ],
   "Electric": [
     "Xurkitree",
@@ -103,11 +91,9 @@
     "Sneasler (Shadow)"
   ],
   "Fighting/Steel": [
-    "Cobalion",
     "Zamazenta (Crowned Shield)"
   ],
   "Fighting/Water": [
-    "Keldeo (Ordinary)",
     "Urshifu (Rapid Strike)"
   ],
   "Fire": [
@@ -130,6 +116,10 @@
   "Fire/Water": [
     "Volcanion"
   ],
+  "Ghost/Dragon": [
+    "Giratina (Origin)",
+    "Giratina (Altered)"
+  ],
   "Grass/Fairy": [
     "Tapu Bulu"
   ],
@@ -145,9 +135,6 @@
   "Ground/Flying": [
     "Landorus (Therian)"
   ],
-  "Ground/Ice": [
-    "Mamoswine (Shadow)"
-  ],
   "Ground/Normal": [
     "Ursaluna (Shadow)",
     "Ursaluna"
@@ -159,6 +146,9 @@
   "Ground/Steel": [
     "Excadrill (Shadow)",
     "Excadrill"
+  ],
+  "Ice/Ground": [
+    "Mamoswine (Shadow)"
   ],
   "Normal/Psychic": [
     "Meloetta (Aria)"
@@ -179,9 +169,6 @@
     "Lunala"
   ],
   "Psychic/Steel": [
-    "Metagross",
-    "Metagross (Shadow)",
-    "Jirachi",
     "Solgaleo",
     "Necrozma (Dusk Mane)"
   ],
@@ -191,15 +178,36 @@
   "Steel": [
     "Melmetal"
   ],
+  "Steel/Dragon": [
+    "Dialga (Origin)",
+    "Dialga (Shadow)",
+    "Dialga"
+  ],
+  "Steel/Fighting": [
+    "Cobalion"
+  ],
   "Steel/Ghost": [
     "Gholdengo"
+  ],
+  "Steel/Psychic": [
+    "Metagross",
+    "Metagross (Shadow)",
+    "Jirachi"
   ],
   "Water": [
     "Kyogre",
     "Kyogre (Shadow)"
   ],
+  "Water/Dragon": [
+    "Palkia (Origin)",
+    "Palkia (Shadow)",
+    "Palkia"
+  ],
   "Water/Fairy": [
     "Primarina"
+  ],
+  "Water/Fighting": [
+    "Keldeo (Ordinary)"
   ],
   "Water/Flying": [
     "Gyarados (Shadow)",

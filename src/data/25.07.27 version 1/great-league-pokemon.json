@@ -32,9 +32,7 @@
   "Bug/Rock": [
     "Crustle (Shadow)",
     "Crustle",
-    "Kleavor",
-    "Armaldo (Shadow)",
-    "Armaldo"
+    "Kleavor"
   ],
   "Bug/Steel": [
     "Forretress",
@@ -47,7 +45,7 @@
   ],
   "Bug/Water": [
     "Golisopod",
-    "Araquanid"
+    "Golisopod"
   ],
   "Dark": [
     "Thievul",
@@ -61,30 +59,22 @@
     "Hydreigon"
   ],
   "Dark/Fighting": [
-    "Scrafty",
-    "Pangoro",
-    "Urshifu (Single Strike)"
+    "Scrafty"
   ],
   "Dark/Flying": [
     "Mandibuzz",
-    "Moltres (Galarian)",
-    "Bombirdier"
+    "Moltres (Galarian)"
   ],
   "Dark/Ghost": [
     "Sableye (Shadow)",
-    "Sableye",
-    "Spiritomb"
+    "Sableye"
   ],
   "Dark/Normal": [
     "Raticate (Alolan)"
   ],
   "Dark/Poison": [
     "Overqwil",
-    "Qwilfish (Hisuian)",
-    "Drapion (Shadow)",
-    "Drapion",
-    "Skuntank",
-    "Skuntank (Shadow)"
+    "Qwilfish (Hisuian)"
   ],
   "Dark/Psychic": [
     "Malamar",
@@ -110,8 +100,7 @@
     "Altaria"
   ],
   "Dragon/Ghost": [
-    "Dragapult",
-    "Giratina (Origin)"
+    "Dragapult"
   ],
   "Dragon/Ice": [
     "Arctibax"
@@ -175,9 +164,7 @@
   ],
   "Fairy/Steel": [
     "Tinkaton",
-    "Tinkatuff",
-    "Klefki",
-    "Mawile"
+    "Tinkatuff"
   ],
   "Fighting": [
     "Primeape",
@@ -193,6 +180,10 @@
     "Machop",
     "Machop (Shadow)"
   ],
+  "Fighting/Dark": [
+    "Pangoro",
+    "Urshifu (Single Strike)"
+  ],
   "Fighting/Flying": [
     "Hawlucha"
   ],
@@ -202,22 +193,16 @@
   ],
   "Fighting/Poison": [
     "Sneasler (Shadow)",
-    "Sneasler",
-    "Toxicroak (Shadow)",
-    "Toxicroak"
+    "Sneasler"
   ],
   "Fighting/Psychic": [
-    "Medicham",
-    "Gallade (Shadow)",
-    "Gallade"
+    "Medicham"
   ],
   "Fighting/Steel": [
     "Lucario"
   ],
   "Fighting/Water": [
-    "Tauros (Aqua)",
-    "Poliwrath",
-    "Poliwrath (Shadow)"
+    "Tauros (Aqua)"
   ],
   "Fire": [
     "Ninetales (Shadow)",
@@ -262,11 +247,11 @@
   "Fire/Steel": [
     "Heatran (Shadow)"
   ],
+  "Flying/Dark": [
+    "Bombirdier"
+  ],
   "Flying/Steel": [
-    "Corviknight",
-    "Skarmory",
-    "Skarmory (Shadow)",
-    "Celesteela"
+    "Corviknight"
   ],
   "Ghost": [
     "Dusclops",
@@ -275,6 +260,12 @@
     "Dusknoir",
     "Dusclops (Shadow)",
     "Cofagrigus"
+  ],
+  "Ghost/Dark": [
+    "Spiritomb"
+  ],
+  "Ghost/Dragon": [
+    "Giratina (Origin)"
   ],
   "Ghost/Flying": [
     "Drifblim",
@@ -289,8 +280,7 @@
     "Trevenant",
     "Gourgeist (Average)",
     "Gourgeist (Small)",
-    "Pumpkaboo (Large)",
-    "Decidueye"
+    "Pumpkaboo (Large)"
   ],
   "Ghost/Poison": [
     "Gengar (Shadow)",
@@ -321,6 +311,9 @@
     "Jumpluff (Shadow)",
     "Jumpluff",
     "Tropius"
+  ],
+  "Grass/Ghost": [
+    "Decidueye"
   ],
   "Grass/Ice": [
     "Abomasnow (Shadow)",
@@ -385,9 +378,7 @@
   "Ground/Steel": [
     "Stunfisk (Galarian)",
     "Dugtrio (Alolan) (Shadow)",
-    "Dugtrio (Alolan)",
-    "Steelix",
-    "Steelix (Shadow)"
+    "Dugtrio (Alolan)"
   ],
   "Ice": [
     "Glalie",
@@ -419,10 +410,7 @@
     "Sealeo (Shadow)",
     "Sealeo",
     "Walrein",
-    "Walrein (Shadow)",
-    "Lapras",
-    "Lapras (Shadow)",
-    "Dewgong"
+    "Walrein (Shadow)"
   ],
   "Normal": [
     "Furret",
@@ -479,6 +467,12 @@
     "Muk",
     "Muk (Shadow)"
   ],
+  "Poison/Dark": [
+    "Drapion (Shadow)",
+    "Drapion",
+    "Skuntank",
+    "Skuntank (Shadow)"
+  ],
   "Poison/Dragon": [
     "Dragalge"
   ],
@@ -486,10 +480,15 @@
     "Weezing (Galarian) (Shadow)",
     "Weezing (Galarian)"
   ],
+  "Poison/Fighting": [
+    "Toxicroak (Shadow)",
+    "Toxicroak"
+  ],
   "Poison/Fire": [
     "Salazzle"
   ],
   "Poison/Ground": [
+    "Clodsire",
     "Clodsire",
     "Nidoqueen",
     "Nidoqueen (Shadow)"
@@ -498,10 +497,7 @@
     "Grafaiai"
   ],
   "Poison/Water": [
-    "Toxapex",
-    "Tentacruel",
-    "Qwilfish",
-    "Tentacruel (Shadow)"
+    "Toxapex"
   ],
   "Psychic": [
     "Grumpig",
@@ -513,9 +509,17 @@
   "Psychic/Fairy": [
     "Rapidash (Galarian)"
   ],
+  "Psychic/Fighting": [
+    "Gallade (Shadow)",
+    "Gallade"
+  ],
   "Rock": [
     "Regirock",
     "Regirock (Shadow)"
+  ],
+  "Rock/Bug": [
+    "Armaldo (Shadow)",
+    "Armaldo"
   ],
   "Rock/Dragon": [
     "Tyrunt (Shadow)"
@@ -540,16 +544,10 @@
   ],
   "Rock/Steel": [
     "Bastiodon",
-    "Bastiodon (Shadow)",
-    "Lairon",
-    "Lairon (Shadow)",
-    "Aron",
-    "Aron (Shadow)",
-    "Aggron"
+    "Bastiodon (Shadow)"
   ],
   "Rock/Water": [
-    "Barbaracle",
-    "Relicanth"
+    "Barbaracle"
   ],
   "Steel": [
     "Melmetal",
@@ -557,10 +555,30 @@
     "Perrserker",
     "Registeel (Shadow)"
   ],
+  "Steel/Fairy": [
+    "Klefki",
+    "Mawile"
+  ],
+  "Steel/Flying": [
+    "Skarmory",
+    "Skarmory (Shadow)",
+    "Celesteela"
+  ],
+  "Steel/Ground": [
+    "Steelix",
+    "Steelix (Shadow)"
+  ],
   "Steel/Psychic": [
     "Metang (Shadow)",
     "Metang",
     "Bronzong"
+  ],
+  "Steel/Rock": [
+    "Lairon",
+    "Lairon (Shadow)",
+    "Aron",
+    "Aron (Shadow)",
+    "Aggron"
   ],
   "Water": [
     "Samurott",
@@ -584,6 +602,9 @@
     "Wailord (Shadow)",
     "Suicune (Shadow)"
   ],
+  "Water/Bug": [
+    "Araquanid"
+  ],
   "Water/Dark": [
     "Greninja",
     "Samurott (Hisuian)"
@@ -597,6 +618,10 @@
   "Water/Fairy": [
     "Azumarill",
     "Tapu Fini"
+  ],
+  "Water/Fighting": [
+    "Poliwrath",
+    "Poliwrath (Shadow)"
   ],
   "Water/Flying": [
     "Gyarados (Shadow)",
@@ -620,7 +645,20 @@
     "Marshtomp (Shadow)",
     "Marshtomp"
   ],
+  "Water/Ice": [
+    "Lapras",
+    "Lapras (Shadow)",
+    "Dewgong"
+  ],
+  "Water/Poison": [
+    "Tentacruel",
+    "Qwilfish",
+    "Tentacruel (Shadow)"
+  ],
   "Water/Psychic": [
     "Starmie"
+  ],
+  "Water/Rock": [
+    "Relicanth"
   ]
 }

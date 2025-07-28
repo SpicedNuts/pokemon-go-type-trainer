@@ -33,7 +33,6 @@
     "Guzzlord"
   ],
   "Dark/Flying": [
-    "Bombirdier",
     "Moltres (Galarian)",
     "Mandibuzz"
   ],
@@ -53,12 +52,9 @@
     "Dragonite"
   ],
   "Dragon/Ghost": [
-    "Giratina (Altered)",
-    "Giratina (Origin)",
     "Dragapult"
   ],
   "Dragon/Ground": [
-    "Flygon (Shadow)",
     "Zygarde (Complete Forme)"
   ],
   "Dragon/Ice": [
@@ -115,8 +111,6 @@
     "Annihilape (Shadow)"
   ],
   "Fighting/Poison": [
-    "Toxicroak (Shadow)",
-    "Toxicroak",
     "Sneasler (Shadow)",
     "Sneasler"
   ],
@@ -143,6 +137,9 @@
   "Fire/Psychic": [
     "Armarouge"
   ],
+  "Flying/Dark": [
+    "Bombirdier"
+  ],
   "Flying/Steel": [
     "Corviknight"
   ],
@@ -154,12 +151,15 @@
   "Ghost/Dark": [
     "Spiritomb"
   ],
+  "Ghost/Dragon": [
+    "Giratina (Altered)",
+    "Giratina (Origin)"
+  ],
   "Ghost/Flying": [
     "Drifblim (Shadow)",
     "Drifblim"
   ],
   "Ghost/Grass": [
-    "Decidueye",
     "Trevenant",
     "Gourgeist (Super)",
     "Gourgeist (Large)",
@@ -167,9 +167,6 @@
     "Gourgeist (Small)"
   ],
   "Ghost/Ground": [
-    "Runerigus",
-    "Golurk (Shadow)",
-    "Golurk",
     "Palossand"
   ],
   "Ghost/Poison": [
@@ -188,6 +185,9 @@
   "Grass/Fighting": [
     "Virizion",
     "Chesnaught"
+  ],
+  "Grass/Ghost": [
+    "Decidueye"
   ],
   "Grass/Ice": [
     "Abomasnow"
@@ -213,6 +213,9 @@
     "Donphan (Shadow)",
     "Donphan"
   ],
+  "Ground/Dragon": [
+    "Flygon (Shadow)"
+  ],
   "Ground/Electric": [
     "Stunfisk"
   ],
@@ -220,9 +223,12 @@
     "Gliscor",
     "Gliscor (Shadow)"
   ],
+  "Ground/Ghost": [
+    "Runerigus",
+    "Golurk (Shadow)",
+    "Golurk"
+  ],
   "Ground/Steel": [
-    "Steelix",
-    "Steelix (Shadow)",
     "Stunfisk (Galarian)"
   ],
   "Ice": [
@@ -242,8 +248,6 @@
     "Sandslash (Alolan) (Shadow)"
   ],
   "Ice/Water": [
-    "Lapras (Shadow)",
-    "Lapras",
     "Walrein",
     "Walrein (Shadow)"
   ],
@@ -271,6 +275,10 @@
   "Poison/Fairy": [
     "Weezing (Galarian) (Shadow)",
     "Weezing (Galarian)"
+  ],
+  "Poison/Fighting": [
+    "Toxicroak (Shadow)",
+    "Toxicroak"
   ],
   "Poison/Fire": [
     "Salazzle"
@@ -308,8 +316,7 @@
     "Aurorus (Shadow)"
   ],
   "Rock/Water": [
-    "Barbaracle",
-    "Relicanth"
+    "Barbaracle"
   ],
   "Steel": [
     "Registeel",
@@ -322,6 +329,10 @@
   ],
   "Steel/Ghost": [
     "Gholdengo"
+  ],
+  "Steel/Ground": [
+    "Steelix",
+    "Steelix (Shadow)"
   ],
   "Steel/Psychic": [
     "Bronzong"
@@ -358,8 +369,15 @@
     "Swampert (Shadow)",
     "Whiscash"
   ],
+  "Water/Ice": [
+    "Lapras (Shadow)",
+    "Lapras"
+  ],
   "Water/Poison": [
     "Tentacruel",
     "Tentacruel (Shadow)"
+  ],
+  "Water/Rock": [
+    "Relicanth"
   ]
 }
