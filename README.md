@@ -147,8 +147,15 @@ The app includes PWA features for better mobile experience:
 - Smooth animations without sacrificing performance
 - Clear visual feedback for all interactions
 
+## 🙏 Credits
+
+**Type Effectiveness Matrix** - Based on the dual-type effectiveness spreadsheet created by u/profaj on r/TheSilphRoad:
+- [Updated type effectiveness chart w/ dual-types](https://www.reddit.com/r/TheSilphRoad/comments/aat72e/updated_type_effectiveness_chart_w_dualtypes/)
+- Original work using Gamepress numbers and u/zehipp0's template
+- Adapted for Pokemon GO's specific type effectiveness multipliers (0.391x, 0.625x, 1.0x, 1.6x)
+
 ---
 
 **Master type effectiveness, dominate PvP battles!** ⚔️
 
-*Data sourced from PvPoke.com • Built for the Pokemon GO competitive community*
+*Data sourced from PvPoke.com • Type effectiveness from r/TheSilphRoad community • Built for the Pokemon GO competitive community*
