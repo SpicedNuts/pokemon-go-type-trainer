@@ -149,6 +149,12 @@ The app includes PWA features for better mobile experience:
 
 ## 🙏 Credits
 
+**Meta Data & Pokemon Rankings** - All competitive meta data sourced from [PvPoke.com](https://pvpoke.com):
+- Created and developed by **Matt** (KakunaMattata42/EmpoleonDynamite)
+- Usage statistics, Pokemon rankings, and meta frequency weights
+- The premier resource for Pokemon GO PvP analysis and battle simulations
+- Support PvPoke: [Patreon](https://www.patreon.com/pvpoke) | [Discord](https://discord.gg/pvpoke) | [GitHub](https://github.com/pvpoke/pvpoke)
+
 **Type Effectiveness Matrix** - Based on the dual-type effectiveness spreadsheet created by u/profaj on r/TheSilphRoad:
 - [Updated type effectiveness chart w/ dual-types](https://www.reddit.com/r/TheSilphRoad/comments/aat72e/updated_type_effectiveness_chart_w_dualtypes/)
 - Original work using Gamepress numbers and u/zehipp0's template
@@ -158,4 +164,4 @@ The app includes PWA features for better mobile experience:
 
 **Master type effectiveness, dominate PvP battles!** ⚔️
 
-*Data sourced from PvPoke.com • Type effectiveness from r/TheSilphRoad community • Built for the Pokemon GO competitive community*
+*Meta data from [PvPoke.com](https://pvpoke.com) • Type effectiveness from r/TheSilphRoad community • Built for the Pokemon GO competitive community*
