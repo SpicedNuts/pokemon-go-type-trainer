@@ -1,0 +1,365 @@
+{
+  "Bug/Dark": [
+    "Lokix"
+  ],
+  "Bug/Flying": [
+    "Scyther (Shadow)"
+  ],
+  "Bug/Grass": [
+    "Leavanny"
+  ],
+  "Bug/Rock": [
+    "Crustle",
+    "Crustle (Shadow)"
+  ],
+  "Bug/Steel": [
+    "Forretress",
+    "Forretress (Shadow)",
+    "Genesect (Shock)",
+    "Genesect (Chill)",
+    "Scizor (Shadow)",
+    "Scizor",
+    "Genesect (Burn)",
+    "Genesect (Douse)",
+    "Genesect"
+  ],
+  "Bug/Water": [
+    "Golisopod"
+  ],
+  "Dark": [
+    "Umbreon"
+  ],
+  "Dark/Dragon": [
+    "Guzzlord"
+  ],
+  "Dark/Flying": [
+    "Bombirdier",
+    "Moltres (Galarian)",
+    "Mandibuzz"
+  ],
+  "Dark/Psychic": [
+    "Malamar (Shadow)",
+    "Malamar"
+  ],
+  "Dragon": [
+    "Regidrago",
+    "Goodra"
+  ],
+  "Dragon/Fighting": [
+    "Kommo-o"
+  ],
+  "Dragon/Flying": [
+    "Dragonite (Shadow)",
+    "Dragonite"
+  ],
+  "Dragon/Ghost": [
+    "Giratina (Altered)",
+    "Giratina (Origin)",
+    "Dragapult"
+  ],
+  "Dragon/Ground": [
+    "Flygon (Shadow)",
+    "Zygarde (Complete Forme)"
+  ],
+  "Dragon/Ice": [
+    "Kyurem"
+  ],
+  "Electric": [
+    "Bellibolt",
+    "Electivire (Shadow)",
+    "Raikou (Shadow)",
+    "Raikou",
+    "Electivire"
+  ],
+  "Electric/Dark": [
+    "Morpeko (Full Belly)"
+  ],
+  "Electric/Flying": [
+    "Zapdos (Shadow)",
+    "Zapdos"
+  ],
+  "Electric/Poison": [
+    "Toxtricity"
+  ],
+  "Electric/Psychic": [
+    "Raichu (Alolan)"
+  ],
+  "Electric/Steel": [
+    "Magnezone (Shadow)",
+    "Togedemaru",
+    "Magnezone"
+  ],
+  "Fairy": [
+    "Clefable",
+    "Florges",
+    "Dachsbun"
+  ],
+  "Fairy/Steel": [
+    "Tinkaton"
+  ],
+  "Fighting": [
+    "Primeape",
+    "Primeape (Shadow)",
+    "Machamp (Shadow)",
+    "Machamp",
+    "Hariyama (Shadow)",
+    "Hariyama",
+    "Machoke (Shadow)"
+  ],
+  "Fighting/Dark": [
+    "Pangoro",
+    "Urshifu (Single Strike)"
+  ],
+  "Fighting/Ghost": [
+    "Annihilape",
+    "Annihilape (Shadow)"
+  ],
+  "Fighting/Poison": [
+    "Toxicroak (Shadow)",
+    "Toxicroak",
+    "Sneasler (Shadow)",
+    "Sneasler"
+  ],
+  "Fire": [
+    "Ninetales",
+    "Ninetales (Shadow)",
+    "Typhlosion",
+    "Rapidash",
+    "Typhlosion (Shadow)"
+  ],
+  "Fire/Dark": [
+    "Incineroar"
+  ],
+  "Fire/Dragon": [
+    "Turtonator"
+  ],
+  "Fire/Flying": [
+    "Talonflame",
+    "Ho-Oh"
+  ],
+  "Fire/Ghost": [
+    "Skeledirge"
+  ],
+  "Fire/Psychic": [
+    "Armarouge"
+  ],
+  "Flying/Steel": [
+    "Corviknight"
+  ],
+  "Ghost": [
+    "Dusknoir (Shadow)",
+    "Dusknoir",
+    "Cofagrigus"
+  ],
+  "Ghost/Dark": [
+    "Spiritomb"
+  ],
+  "Ghost/Flying": [
+    "Drifblim (Shadow)",
+    "Drifblim"
+  ],
+  "Ghost/Grass": [
+    "Decidueye",
+    "Trevenant",
+    "Gourgeist (Super)",
+    "Gourgeist (Large)",
+    "Gourgeist (Average)",
+    "Gourgeist (Small)"
+  ],
+  "Ghost/Ground": [
+    "Runerigus",
+    "Golurk (Shadow)",
+    "Golurk",
+    "Palossand"
+  ],
+  "Ghost/Poison": [
+    "Gengar (Shadow)",
+    "Gengar"
+  ],
+  "Grass": [
+    "Bellossom (Shadow)",
+    "Lurantis",
+    "Meganium",
+    "Bellossom",
+    "Meganium (Shadow)",
+    "Serperior",
+    "Serperior (Shadow)"
+  ],
+  "Grass/Fighting": [
+    "Virizion",
+    "Chesnaught"
+  ],
+  "Grass/Ice": [
+    "Abomasnow"
+  ],
+  "Grass/Poison": [
+    "Victreebel (Shadow)",
+    "Victreebel",
+    "Amoonguss",
+    "Venusaur",
+    "Amoonguss (Shadow)",
+    "Venusaur (Shadow)",
+    "Roserade"
+  ],
+  "Grass/Steel": [
+    "Ferrothorn",
+    "Ferrothorn (Shadow)"
+  ],
+  "Ground": [
+    "Hippowdon (Shadow)",
+    "Hippowdon",
+    "Sandslash",
+    "Sandslash (Shadow)",
+    "Donphan (Shadow)",
+    "Donphan"
+  ],
+  "Ground/Electric": [
+    "Stunfisk"
+  ],
+  "Ground/Flying": [
+    "Gliscor",
+    "Gliscor (Shadow)"
+  ],
+  "Ground/Steel": [
+    "Steelix",
+    "Steelix (Shadow)",
+    "Stunfisk (Galarian)"
+  ],
+  "Ice": [
+    "Regice",
+    "Avalugg",
+    "Regice (Shadow)"
+  ],
+  "Ice/Fairy": [
+    "Ninetales (Alolan) (Shadow)",
+    "Ninetales (Alolan)"
+  ],
+  "Ice/Flying": [
+    "Articuno"
+  ],
+  "Ice/Steel": [
+    "Sandslash (Alolan)",
+    "Sandslash (Alolan) (Shadow)"
+  ],
+  "Ice/Water": [
+    "Lapras (Shadow)",
+    "Lapras",
+    "Walrein",
+    "Walrein (Shadow)"
+  ],
+  "Normal": [
+    "Lickilicky",
+    "Ursaring (Shadow)",
+    "Miltank"
+  ],
+  "Normal/Psychic": [
+    "Oranguru"
+  ],
+  "Poison": [
+    "Muk (Shadow)",
+    "Muk"
+  ],
+  "Poison/Dark": [
+    "Drapion",
+    "Drapion (Shadow)",
+    "Skuntank (Shadow)",
+    "Skuntank"
+  ],
+  "Poison/Dragon": [
+    "Dragalge"
+  ],
+  "Poison/Fairy": [
+    "Weezing (Galarian) (Shadow)",
+    "Weezing (Galarian)"
+  ],
+  "Poison/Fire": [
+    "Salazzle"
+  ],
+  "Poison/Ground": [
+    "Nidoqueen (Shadow)",
+    "Nidoqueen",
+    "Clodsire"
+  ],
+  "Psychic": [
+    "Grumpig",
+    "Grumpig (Shadow)",
+    "Cresselia",
+    "Cresselia (Shadow)",
+    "Mew",
+    "Mewtwo (Armored)",
+    "Uxie"
+  ],
+  "Psychic/Fighting": [
+    "Gallade (Shadow)"
+  ],
+  "Psychic/Flying": [
+    "Lugia"
+  ],
+  "Rock": [
+    "Regirock",
+    "Regirock (Shadow)"
+  ],
+  "Rock/Grass": [
+    "Cradily",
+    "Cradily (Shadow)"
+  ],
+  "Rock/Ice": [
+    "Aurorus",
+    "Aurorus (Shadow)"
+  ],
+  "Rock/Water": [
+    "Barbaracle",
+    "Relicanth"
+  ],
+  "Steel": [
+    "Registeel",
+    "Registeel (Shadow)",
+    "Melmetal",
+    "Perrserker"
+  ],
+  "Steel/Fighting": [
+    "Cobalion"
+  ],
+  "Steel/Ghost": [
+    "Gholdengo"
+  ],
+  "Steel/Psychic": [
+    "Bronzong"
+  ],
+  "Steel/Rock": [
+    "Aggron"
+  ],
+  "Water": [
+    "Feraligatr (Shadow)",
+    "Samurott (Shadow)",
+    "Feraligatr",
+    "Blastoise",
+    "Samurott",
+    "Blastoise (Shadow)",
+    "Milotic",
+    "Politoed (Shadow)"
+  ],
+  "Water/Dark": [
+    "Greninja"
+  ],
+  "Water/Fairy": [
+    "Tapu Fini"
+  ],
+  "Water/Fighting": [
+    "Poliwrath",
+    "Poliwrath (Shadow)"
+  ],
+  "Water/Ghost": [
+    "Jellicent"
+  ],
+  "Water/Ground": [
+    "Gastrodon",
+    "Swampert",
+    "Swampert (Shadow)",
+    "Whiscash"
+  ],
+  "Water/Poison": [
+    "Tentacruel",
+    "Tentacruel (Shadow)"
+  ]
+}

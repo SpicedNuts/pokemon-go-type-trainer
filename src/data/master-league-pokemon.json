@@ -1,212 +1,310 @@
 {
-  "Bug/Fighting": [
-    "Buzzwole"
-  ],
   "Bug/Steel": [
-    "Genesect (Chill)",
-    "Genesect (Shock)",
     "Genesect (Burn)",
-    "Genesect",
-    "Genesect (Douse)"
-  ],
-  "Bug/Water": [
-    "Golisopod"
+    "Genesect"
   ],
   "Dark/Dragon": [
-    "Hydreigon"
+    "Guzzlord"
   ],
   "Dark/Flying": [
     "Yveltal"
   ],
-  "Dark/Grass": [
-    "Zarude"
-  ],
   "Dragon": [
-    "Goodra"
+    "Rayquaza"
   ],
   "Dragon/Electric": [
     "Zekrom"
   ],
-  "Dragon/Fighting": [
-    "Kommo-o"
+  "Dragon/Fairy": [
+    "Zacian"
   ],
   "Dragon/Fire": [
     "Reshiram"
   ],
   "Dragon/Flying": [
-    "Dragonite (Shadow)",
-    "Dragonite"
+    "Rayquaza (Mega)",
+    "Dragonite",
+    "Salamence",
+    "Garchomp"
   ],
   "Dragon/Ghost": [
     "Giratina (Origin)",
-    "Giratina (Altered)",
-    "Dragapult"
+    "Giratina (Altered)"
   ],
   "Dragon/Ground": [
-    "Zygarde (Complete Forme)",
-    "Garchomp"
+    "Garchomp (Shadow)",
+    "Zygarde (Complete)"
   ],
   "Dragon/Ice": [
-    "Kyurem (Black)",
     "Kyurem (White)",
-    "Kyurem",
-    "Baxcalibur"
+    "Kyurem (Black)",
+    "Kyurem"
   ],
   "Dragon/Psychic": [
-    "Latios (Shadow)",
-    "Latios"
+    "Latios (Mega)",
+    "Latias (Mega)",
+    "Latios",
+    "Latias"
   ],
   "Dragon/Steel": [
-    "Dialga (Origin)",
-    "Dialga (Shadow)",
+    "Duraludon",
     "Dialga"
   ],
   "Dragon/Water": [
-    "Palkia (Origin)",
+    "Palkia",
     "Palkia (Shadow)",
-    "Palkia"
+    "Dondozo"
   ],
   "Electric": [
-    "Xurkitree",
-    "Raikou (Shadow)"
+    "Tapu Koko"
+  ],
+  "Electric/Dragon": [
+    "Miraidon"
+  ],
+  "Electric/Fairy": [
+    "Dedenne"
   ],
   "Electric/Flying": [
-    "Zapdos (Shadow)",
-    "Zapdos"
+    "Zapdos",
+    "Thundurus (Therian)"
+  ],
+  "Electric/Ice": [
+    "Frost Rotom"
+  ],
+  "Electric/Steel": [
+    "Magnezone"
   ],
   "Fairy": [
-    "Florges",
-    "Xerneas",
-    "Zacian (Hero)"
+    "Xerneas"
   ],
   "Fairy/Flying": [
-    "Enamorus (Incarnate)"
+    "Togekiss"
+  ],
+  "Fairy/Psychic": [
+    "Tapu Lele"
   ],
   "Fairy/Steel": [
     "Zacian (Crowned Sword)"
   ],
   "Fighting": [
-    "Machamp (Shadow)",
-    "Conkeldurr (Shadow)",
-    "Zamazenta (Hero)"
+    "Buzzwole",
+    "Keldeo"
   ],
-  "Fighting/Dark": [
-    "Urshifu (Single Strike)",
-    "Pangoro"
+  "Fighting/Dragon": [
+    "Koraidon"
+  ],
+  "Fighting/Flying": [
+    "Landorus (Incarnate)"
   ],
   "Fighting/Ghost": [
-    "Annihilape (Shadow)",
-    "Annihilape",
     "Marshadow"
   ],
   "Fighting/Poison": [
-    "Sneasler (Shadow)"
+    "Buzzwole (Jungle)"
+  ],
+  "Fighting/Rock": [
+    "Terrakion"
   ],
   "Fighting/Steel": [
-    "Cobalion",
     "Zamazenta (Crowned Shield)"
   ],
-  "Fighting/Water": [
-    "Keldeo (Ordinary)",
-    "Urshifu (Rapid Strike)"
-  ],
   "Fire": [
-    "Entei"
+    "Heatran"
+  ],
+  "Fire/Dark": [
+    "Incineroar"
   ],
   "Fire/Flying": [
-    "Ho-Oh",
-    "Ho-Oh (Shadow)"
+    "Ho-Oh (Shadow)",
+    "Ho-Oh"
   ],
   "Fire/Ghost": [
-    "Skeledirge"
+    "Blacephalon"
   ],
   "Fire/Psychic": [
-    "Armarouge"
+    "Victini"
   ],
   "Fire/Steel": [
-    "Heatran (Shadow)",
-    "Heatran"
+    "Heatran (Origin)"
   ],
   "Fire/Water": [
     "Volcanion"
   ],
-  "Grass/Fairy": [
-    "Tapu Bulu"
+  "Flying/Normal": [
+    "Regigigas"
+  ],
+  "Flying/Steel": [
+    "Celesteela",
+    "Corviknight"
+  ],
+  "Ghost/Grass": [
+    "Decidueye"
+  ],
+  "Ghost/Psychic": [
+    "Lunala",
+    "Shadow Rider Calyrex"
+  ],
+  "Ghost/Steel": [
+    "Aegislash"
+  ],
+  "Grass": [
+    "Zarude",
+    "Tangrowth"
   ],
   "Grass/Fighting": [
     "Virizion"
   ],
+  "Grass/Flying": [
+    "Shaymin (Sky)"
+  ],
+  "Grass/Ice": [
+    "Ice Rider Calyrex"
+  ],
+  "Grass/Poison": [
+    "Venusaur"
+  ],
+  "Grass/Psychic": [
+    "Celebi"
+  ],
+  "Grass/Steel": [
+    "Kartana"
+  ],
   "Ground": [
-    "Groudon",
-    "Groudon (Shadow)",
-    "Hippowdon (Shadow)",
-    "Hippowdon"
+    "Groudon"
+  ],
+  "Ground/Dragon": [
+    "Garchomp (Mega)"
+  ],
+  "Ground/Fire": [
+    "Primal Groudon"
   ],
   "Ground/Flying": [
     "Landorus (Therian)"
   ],
-  "Ground/Ice": [
-    "Mamoswine (Shadow)"
-  ],
-  "Ground/Normal": [
-    "Ursaluna (Shadow)",
-    "Ursaluna"
-  ],
-  "Ground/Rock": [
-    "Rhyperior (Shadow)",
-    "Rhyperior"
-  ],
   "Ground/Steel": [
-    "Excadrill (Shadow)",
     "Excadrill"
+  ],
+  "Ground/Water": [
+    "Swampert"
+  ],
+  "Ice/Psychic": [
+    "Mr. Rime"
+  ],
+  "Normal": [
+    "Arceus"
   ],
   "Normal/Psychic": [
     "Meloetta (Aria)"
   ],
+  "Poison/Dragon": [
+    "Eternatus"
+  ],
   "Psychic": [
+    "Mew",
     "Mewtwo (Shadow)",
     "Mewtwo"
   ],
+  "Psychic/Dragon": [
+    "Ultra Necrozma"
+  ],
   "Psychic/Fairy": [
-    "Tapu Lele"
+    "Gardevoir"
+  ],
+  "Psychic/Fire": [
+    "Zen Mode Darmanitan"
   ],
   "Psychic/Flying": [
     "Lugia",
     "Lugia (Shadow)"
   ],
   "Psychic/Ghost": [
-    "Necrozma (Dawn Wings)",
-    "Lunala"
+    "Hoopa (Unbound)",
+    "Hoopa"
+  ],
+  "Psychic/Grass": [
+    "Calyrex"
   ],
   "Psychic/Steel": [
-    "Metagross",
-    "Metagross (Shadow)",
-    "Jirachi",
     "Solgaleo",
     "Necrozma (Dusk Mane)"
   ],
+  "Rock": [
+    "Nihilego"
+  ],
+  "Rock/Dark": [
+    "Tyranitar"
+  ],
+  "Rock/Fairy": [
+    "Diancie"
+  ],
   "Rock/Fighting": [
-    "Terrakion"
+    "Cobalion"
+  ],
+  "Rock/Flying": [
+    "Aerodactyl"
+  ],
+  "Rock/Steel": [
+    "Stakataka",
+    "Aggron"
   ],
   "Steel": [
+    "Registeel",
     "Melmetal"
   ],
-  "Steel/Ghost": [
-    "Gholdengo"
+  "Steel/Dragon": [
+    "Dialga (Origin)",
+    "Duraludon (Gigantamax)",
+    "Dialga (Primal)"
+  ],
+  "Steel/Fighting": [
+    "Lucario",
+    "Cobalion (Apex)"
+  ],
+  "Steel/Fire": [
+    "Heatran (Shadow)"
+  ],
+  "Steel/Flying": [
+    "Skarmory"
+  ],
+  "Steel/Psychic": [
+    "Metagross"
   ],
   "Water": [
     "Kyogre",
-    "Kyogre (Shadow)"
+    "Primarina",
+    "Primal Kyogre"
   ],
-  "Water/Fairy": [
-    "Primarina"
-  ],
-  "Water/Flying": [
-    "Gyarados (Shadow)",
+  "Water/Dark": [
     "Gyarados"
   ],
+  "Water/Dragon": [
+    "Palkia (Origin)",
+    "Walking Wake",
+    "Kingdra"
+  ],
+  "Water/Electric": [
+    "Wash Rotom"
+  ],
+  "Water/Fairy": [
+    "Tapu Fini",
+    "Primarina (Aria)"
+  ],
+  "Water/Fighting": [
+    "Urshifu (Rapid Strike)"
+  ],
+  "Water/Flying": [
+    "Gyarados (Mega)"
+  ],
+  "Water/Ghost": [
+    "Jellicent"
+  ],
   "Water/Ground": [
-    "Swampert (Shadow)",
-    "Swampert"
+    "Paldean Wooper"
+  ],
+  "Water/Ice": [
+    "Lapras"
+  ],
+  "Water/Psychic": [
+    "Slowbro"
   ]
 }

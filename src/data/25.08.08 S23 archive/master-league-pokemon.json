@@ -1,0 +1,212 @@
+{
+  "Bug/Fighting": [
+    "Buzzwole"
+  ],
+  "Bug/Steel": [
+    "Genesect (Chill)",
+    "Genesect (Shock)",
+    "Genesect (Burn)",
+    "Genesect",
+    "Genesect (Douse)"
+  ],
+  "Bug/Water": [
+    "Golisopod"
+  ],
+  "Dark/Dragon": [
+    "Hydreigon"
+  ],
+  "Dark/Flying": [
+    "Yveltal"
+  ],
+  "Dark/Grass": [
+    "Zarude"
+  ],
+  "Dragon": [
+    "Goodra"
+  ],
+  "Dragon/Electric": [
+    "Zekrom"
+  ],
+  "Dragon/Fighting": [
+    "Kommo-o"
+  ],
+  "Dragon/Fire": [
+    "Reshiram"
+  ],
+  "Dragon/Flying": [
+    "Dragonite (Shadow)",
+    "Dragonite"
+  ],
+  "Dragon/Ghost": [
+    "Giratina (Origin)",
+    "Giratina (Altered)",
+    "Dragapult"
+  ],
+  "Dragon/Ground": [
+    "Zygarde (Complete Forme)",
+    "Garchomp"
+  ],
+  "Dragon/Ice": [
+    "Kyurem (Black)",
+    "Kyurem (White)",
+    "Kyurem",
+    "Baxcalibur"
+  ],
+  "Dragon/Psychic": [
+    "Latios (Shadow)",
+    "Latios"
+  ],
+  "Dragon/Steel": [
+    "Dialga (Origin)",
+    "Dialga (Shadow)",
+    "Dialga"
+  ],
+  "Dragon/Water": [
+    "Palkia (Origin)",
+    "Palkia (Shadow)",
+    "Palkia"
+  ],
+  "Electric": [
+    "Xurkitree",
+    "Raikou (Shadow)"
+  ],
+  "Electric/Flying": [
+    "Zapdos (Shadow)",
+    "Zapdos"
+  ],
+  "Fairy": [
+    "Florges",
+    "Xerneas",
+    "Zacian (Hero)"
+  ],
+  "Fairy/Flying": [
+    "Enamorus (Incarnate)"
+  ],
+  "Fairy/Steel": [
+    "Zacian (Crowned Sword)"
+  ],
+  "Fighting": [
+    "Machamp (Shadow)",
+    "Conkeldurr (Shadow)",
+    "Zamazenta (Hero)"
+  ],
+  "Fighting/Dark": [
+    "Urshifu (Single Strike)",
+    "Pangoro"
+  ],
+  "Fighting/Ghost": [
+    "Annihilape (Shadow)",
+    "Annihilape",
+    "Marshadow"
+  ],
+  "Fighting/Poison": [
+    "Sneasler (Shadow)"
+  ],
+  "Fighting/Steel": [
+    "Cobalion",
+    "Zamazenta (Crowned Shield)"
+  ],
+  "Fighting/Water": [
+    "Keldeo (Ordinary)",
+    "Urshifu (Rapid Strike)"
+  ],
+  "Fire": [
+    "Entei"
+  ],
+  "Fire/Flying": [
+    "Ho-Oh",
+    "Ho-Oh (Shadow)"
+  ],
+  "Fire/Ghost": [
+    "Skeledirge"
+  ],
+  "Fire/Psychic": [
+    "Armarouge"
+  ],
+  "Fire/Steel": [
+    "Heatran (Shadow)",
+    "Heatran"
+  ],
+  "Fire/Water": [
+    "Volcanion"
+  ],
+  "Grass/Fairy": [
+    "Tapu Bulu"
+  ],
+  "Grass/Fighting": [
+    "Virizion"
+  ],
+  "Ground": [
+    "Groudon",
+    "Groudon (Shadow)",
+    "Hippowdon (Shadow)",
+    "Hippowdon"
+  ],
+  "Ground/Flying": [
+    "Landorus (Therian)"
+  ],
+  "Ground/Ice": [
+    "Mamoswine (Shadow)"
+  ],
+  "Ground/Normal": [
+    "Ursaluna (Shadow)",
+    "Ursaluna"
+  ],
+  "Ground/Rock": [
+    "Rhyperior (Shadow)",
+    "Rhyperior"
+  ],
+  "Ground/Steel": [
+    "Excadrill (Shadow)",
+    "Excadrill"
+  ],
+  "Normal/Psychic": [
+    "Meloetta (Aria)"
+  ],
+  "Psychic": [
+    "Mewtwo (Shadow)",
+    "Mewtwo"
+  ],
+  "Psychic/Fairy": [
+    "Tapu Lele"
+  ],
+  "Psychic/Flying": [
+    "Lugia",
+    "Lugia (Shadow)"
+  ],
+  "Psychic/Ghost": [
+    "Necrozma (Dawn Wings)",
+    "Lunala"
+  ],
+  "Psychic/Steel": [
+    "Metagross",
+    "Metagross (Shadow)",
+    "Jirachi",
+    "Solgaleo",
+    "Necrozma (Dusk Mane)"
+  ],
+  "Rock/Fighting": [
+    "Terrakion"
+  ],
+  "Steel": [
+    "Melmetal"
+  ],
+  "Steel/Ghost": [
+    "Gholdengo"
+  ],
+  "Water": [
+    "Kyogre",
+    "Kyogre (Shadow)"
+  ],
+  "Water/Fairy": [
+    "Primarina"
+  ],
+  "Water/Flying": [
+    "Gyarados (Shadow)",
+    "Gyarados"
+  ],
+  "Water/Ground": [
+    "Swampert (Shadow)",
+    "Swampert"
+  ]
+}
